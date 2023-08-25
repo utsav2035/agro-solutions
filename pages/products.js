@@ -2,6 +2,7 @@ import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import Product from '../models/Product';
 const mongoose = require("mongoose");
+
 import { useRouter } from 'next/router'
 
 const products = ({products,category}) => {
@@ -49,23 +50,13 @@ const products = ({products,category}) => {
 
 export async function getServerSideProps(context) {
 
-  // Do it this way with fetch or directly write logic which is recommended in documentation
-  // let res = await fetch("http://localhost:3000/api/getproducts")
-  // let products = await res.text()
-
-  // Direct logic
   if (!mongoose.connections[0].readyState) {
     await mongoose.connect(process.env.MONGO_URI);
   }
   
   let allproducts = await Product.find({category:context.query.category})
 
-    
   return {
-    // fetch way
-    // props: {products:JSON.parse(products)}, // will be passed to the page component as props
-
-    // Direct logic
     props: { products: JSON.parse(JSON.stringify(allproducts))}
   }
 }

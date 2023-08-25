@@ -1,19 +1,15 @@
-
 # Agro Solutions
 
 A platform to help farmers buy necessary commodities related to farming and sell their yield at MSP. Inform them about market prices and agriculture-related news to make farmers trend-ready.
 
-
 Agro Solutions is built with Next.js for the frontend and backend. It uses APIs and web scraping to accomplish its objectives related to data collection.
-
 
 Users can buy the necessary commodities required for a good yield and learn about the processes and techniques required to have a maximum yield. This yield can also be sold when signing up as a merchant. It shows agriculture sector news and also can tell rates in mandis for a particular district with a particular commodity.
 
-<!-- 
+<!--
 ## Demo
 
 [Agro Solutions](https://youtu.be/3BvayDWLq-c) -->
-
 
 ## Installation
 
@@ -23,11 +19,13 @@ Clone the git repository:
   git clone https://github.com/STRYKER2403/agro_solutions.git
   cd agro_solutions
 ```
+
 Install necessary dependencies:
 
 ```bash
   yarn add dependencies or yarn install
 ```
+
 Create an .env file and set the following variables:
 
 ```bash
@@ -50,18 +48,17 @@ Run development server:
   yarn both
 ```
 
-
 ## Usage
 
-1. Navigate your site to ```/signup``` Create an account for yourself (create a merchant account to access all features).
+1. Navigate your site to `/signup` Create an account for yourself (create a merchant account to access all features).
 
 2. From the Home page , navigation to four sections is possible:
 
 - products - buy products.
 - articles - latest agriculture news.
 - learn - Market trends to know mandi rates.
-        Crop plan for various crop information.
-- Contact Us - contact section.    
+  Crop plan for various crop information.
+- Contact Us - contact section.
 
 3. My account, my orders, and my dashboard are accessible from the profile icon at the top right corner. Changing of passwords, viewing order summaries, and adding and updating products through the dashboard are available.
 
@@ -76,7 +73,7 @@ Product page:
 Home page:
 ![Screenshot (189)](https://user-images.githubusercontent.com/75637474/230472261-543354d6-4ffd-4055-a6ee-4b7db47ba1cb.png)
 
-Shopping cart + checkout page: 
+Shopping cart + checkout page:
 ![Screenshot (202)](https://user-images.githubusercontent.com/75637474/230472293-876c007d-bee1-4657-94b0-a73d5e3ba0c8.png)
 
 Paytm integration(payment gateway):
@@ -87,4 +84,3 @@ My order page:
 
 Article section:
 ![Screenshot (205)](https://user-images.githubusercontent.com/75637474/230472316-e4df1784-fddc-47c5-9765-02b1a3b296ad.png)
-

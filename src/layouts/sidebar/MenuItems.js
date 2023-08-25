@@ -1,6 +1,6 @@
 const Menuitems = [
   {
-    title: "Dashbaord",
+    title: "Dashboard",
     icon: "home",
     href: "/admin",
   },
@@ -10,14 +10,14 @@ const Menuitems = [
     href: "/admin/add",
   },
   {
+    title: "Update Product",
+    icon: "edit",
+    href: "/admin/update",
+  },
+  {
     title: "View Products",
     icon: "eye",
     href: "/admin/allproducts",
-  },
-  {
-    title: "Image Uploader",
-    icon: "upload",
-    href: "/admin/imageuploader",
   },
   {
     title: "Orders",

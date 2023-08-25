@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Login = () => {
+const Login = ({setuser}) => {
 
   useEffect(() => {
     
@@ -12,8 +12,13 @@ const Login = () => {
      {
       router.push("/")
      }
+     else
+     {
+        setuser({value:null})
+     }
     
   }, []);
+  
 
   const router = useRouter();
   const [credentials, setcredentials] = useState({ email: "", password: "" });
@@ -32,10 +37,10 @@ const Login = () => {
 
     let response = await res.json();
 
-    setcredentials({ name: "", email: "", password: "" });
+    setcredentials({email: "", password: "" });
 
     if (response.success) {
-      localStorage.setItem("myuser",JSON.stringify({token: response.token, email: response.email}))
+      localStorage.setItem("myuser",JSON.stringify({token: response.token, email: response.email, type: response.type}))
 
       toast.success('You are successfully logged in!', {
         position: "top-left",

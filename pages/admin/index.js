@@ -1,15 +1,26 @@
 import { Grid } from "@mui/material";
-import BlogCard from "../../src/components/dashboard/BlogCard";
 import SalesOverview from "../../src/components/dashboard/SalesOverview";
-import DailyActivity from "../../src/components/dashboard/DailyActivity";
 import FullLayout from "../../src/layouts/FullLayout";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "../../src/theme/theme";
 import AllProducts from "../../src/components/dashboard/AllProducts";
 import Product from '../../models/Product';
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 const mongoose = require("mongoose");
 
 export default function Index({products}) {
+
+  const router = useRouter();
+
+  useEffect(() => {
+    
+    if (JSON.parse(localStorage.getItem("myuser")).type == "Buyer") {
+      router.push("/")
+    }
+
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
 
@@ -25,15 +36,11 @@ export default function Index({products}) {
         <SalesOverview />
       </Grid>
       {/* ------------------------- row 1 ------------------------- */}
-      <Grid item xs={12} lg={4}>
-        <DailyActivity />
-      </Grid>
-      <Grid item xs={12} lg={8}>
+      
+      <Grid item xs={12} lg={12 }>
         <AllProducts products={products} />
       </Grid>
-      <Grid item xs={12} lg={12}>
-        <BlogCard />
-      </Grid>
+      
     </Grid>
     </FullLayout>
     </ThemeProvider>
